@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Marck+Script&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+* {
+    font-family: Comfortaa;
+}
+/*Убираем расстояние от объектов до края экрана*/
+body{
+    margin: 0px;
+    /*ограничение контента по шерине*/
+/*    max-width: 1180px;
+    margin: 0px auto;
+    padding: 0px 10px;*/
+}
+/*Блокируем прокрутку при вызове адаптивного меню*/
+body._lock {
+    overflow: hidden;
+}
+
