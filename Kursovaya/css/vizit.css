@@ -1,5 +1,7 @@
 .viz_section {
     padding: 100px 0px 0px 0px;
+    max-width: 100%;
+
 }
 
 /*Округляем картинку*/
@@ -36,12 +38,8 @@
     /*border: 10px solid purple;*//*временное обрамление*/
 }
 
-/*
 .viz_text{
     display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
-*/
-
-

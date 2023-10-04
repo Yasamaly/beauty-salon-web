@@ -20,23 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             menuLink.addEventListener("click", onMenuLinkClick);
         });
 
-        /*
-                function onMenuLinkClick(e) {
-                    const menuLink = e.targets;
-                    if (menuLink.dataset.goto && document .querySelector(menuLink.dataset.goto)) {
-                        const gotoBlock = document .querySelector(menuLink.dataset.goto);
-                        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
-
-                        window. scrollTo({
-                            top: gotoBlockValue,
-                            behavior: "smooth"
-                    });
-                        e.preventDefault();
-                    }
-                }
-            }
-        */
-
         function onMenuLinkClick(e) {
             const menuLink = e.target;
             if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
@@ -58,4 +41,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var submitButton = document.getElementById("submitButton");
+
+    submitButton.addEventListener("click", function () {
+        // Выполняйте переход на другую страницу при нажатии на кнопку
+        window.location.href = "recording.html";
+    });
 });
