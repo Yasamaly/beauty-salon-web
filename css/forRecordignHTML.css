@@ -1,0 +1,247 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Tabs
+ */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+/ / make sure it wraps
+}
+
+.tabs .tabs_label {
+    order: 1;
+/ / Put the labels first display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: #90CAF9;
+    font-weight: bold;
+    transition: background ease 0.2s;
+}
+
+.tabs .tab {
+    order: 99;
+/ / Put the tabs last flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+}
+
+.tabs input[type="radio"] {
+    display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+    background: #fff;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+@media (max-width: 45em) {
+    .tabs {
+        display: grid;
+        flex-wrap: wrap;
+    // make sure it wraps grid-template-columns: repeat(auto-fill, minmax(200 px, 1 fr));
+    }
+
+    .tab,
+    .tabs .tabs_label {
+        order: initial;
+    }
+
+    .tabs .tabs_label {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0.2rem;
+    }
+
+    body {
+        overflow-x: hidden;
+        margin: 10px;
+    }
+
+    .tabs .tab {
+        padding: 0;
+    }
+}
+
+/**
+ * Generic Styling
+*/
+body {
+    background: #eee;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    line-height: 0.8;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-size: calc(0.8 * (1vh + 1vw));
+}
+
+/* Пример стилей для грида */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+@media (max-width: 45em) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .grid-item img {
+        max-width: 50%;
+    }
+}
+
+.grid-item {
+    text-align: center;
+    border-radius: 10%;
+    border: 1px solid black;
+    position: relative;
+    cursor: pointer;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10%; /* Округление углов */
+    border: 10px solid transparent; /* Обводка вокруг изображения */
+    box-sizing: border-box; /* Учитываем обводку внутри размеров */
+}
+
+.grid-item:hover {
+    background-color: #ccc; /* Изменение цвета обводки при наведении */
+}
+
+.grid-item.selected {
+    background-color: #ccc;
+}
+
+
+.form {
+    width: 340px;
+    height: 440px;
+    background: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px #000;
+    margin: calc(50vh - 220px) auto;
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    position: relative
+}
+
+.record {
+    margin: 10px 0;
+    padding-bottom: 0;
+    width: 180px;
+    color: #78788c;
+    border-bottom: 3px solid #78788c;
+
+}
+
+
+
+input {
+    font-size: calc(0.8*(1vh + 1vw));
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .3s;
+    border-bottom: 2px solid #bebed2
+}
+
+input:focus {
+    border-bottom: 2px solid #78788c
+}
+
+form label:before {
+    content: attr(type);
+    display: block;
+    margin: 28px 0 0;
+    font-size: 14px;
+    color: #5a5a5a
+}
+
+.input_button {
+    float: right;
+    padding: 8px 12px;
+    margin: 8px 0 0;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #78788c;
+    background: 0;
+    color: #5a5a6e;
+    cursor: pointer;
+    transition: all .3s
+}
+
+.input_button:hover {
+    background: #78788c;
+    color: #fff
+}
+
+span {
+    margin: 0 5px 0 15px
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+}
+
+.day {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    border-bottom: 1px solid #ccc;
+}
+
+.date {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.time-slot {
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.available {
+    background-color: white;
+}
+
+.booked {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+.selected {
+    background-color: #444444;
+}

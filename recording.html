@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись в салон красоты</title>
+    <link rel="stylesheet" href="css/forRecordignHTML.css">
+</head>
+<body>
+<div class="tabs">
+    <input type="radio" name="tabs" id="tabone" checked="checked">
+    <label class="tabs_label" for="tabone">Карта</label>
+    <div class="tab">
+        <h1>Мы на карте</h1>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afc59a75bb53304f57c683ed71b6b52a1c7f24458a0cfc393f080e366f90cd3db&amp;source=constructor"
+                width="913" height="578" frameborder="0"></iframe>
+    </div>
+
+    <input type="radio" name="tabs" id="tabtwo">
+    <label class="tabs_label" for="tabtwo">Запись по мастеру</label>
+    <div class="tab">
+        <h1>Выберите мастера для записи</h1>
+        <div class="grid-container" id="gridContainer">
+            <!-- Контейнер для картинок -->
+            <div class="grid-item" onclick="showRegistrationForm()">
+                <img src="logo.png" alt="Image 1" class="master">
+                <div class="textbox">
+                    <h1>Денис</h1>
+                    <p>Мужской мастер c 10 летним стажем</p>
+                </div>
+            </div>
+            <div class="grid-item" onclick="showRegistrationForm()">
+                <img src="logo.png" alt="Image 2" class="master">
+                <div class="textbox">
+                    <h1>Денис</h1>
+                    <p>Мужской мастер c 10 летним стажем</p>
+                </div>
+            </div>
+            <div class="grid-item" onclick="showRegistrationForm()">
+                <img src="logo.png" alt="Image 3" class="master">
+                <div class="textbox">
+                    <h1>Денис</h1>
+                    <p>Мужской мастер c 10 летним стажем</p>
+                </div>
+            </div>
+            <div class="grid-item" onclick="showRegistrationForm()">
+                <img src="logo.png" alt="Image 4" class="master">
+                <div class="textbox">
+                    <h1>Денис</h1>
+                    <p>Мужской мастер c 10 летним стажем</p>
+                </div>
+            </div>
+            <div class="grid-item" onclick="showRegistrationForm()">
+                <img src="logo.png" alt="Image 5" class="master">
+                <div class="textbox">
+                    <h1>Денис</h1>
+                    <p>Мужской мастер c 10 летним стажем</p>
+                </div>
+            </div>
+            <div class="grid-item" onclick="showRegistrationForm()">
+                <img src="logo.png" alt="Image 6" class="master">
+                <div class="textbox">
+                    <h1>Денис</h1>
+                    <p>Мужской мастер c 10 летним стажем</p>
+                </div>
+            </div>
+            <div class="grid-item" onclick="showRegistrationForm()">
+                <img src="logo.png" alt="Image 7" class="master">
+                <div class="textbox">
+                    <h1>Денис</h1>
+                    <p>Мужской мастер c 10 летним стажем</p>
+                </div>
+            </div>
+            <!-- Добавьте другие элементы grid-item по аналогии -->
+        </div>
+        <div class="record">
+            <h2>ЗАПИСЬ</h2>
+        </div>
+        <!-- <form id="registrationForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+        </form> -->
+        <div class="content" id="content">
+            <!-- Здесь будет меняться контент при клике на картинку -->
+            <p>Выберите мастера для записи</p>
+        </div>
+    </div>
+
+    <input type="radio" name="tabs" id="tabthree">
+    <label class="tabs_label" for="tabthree">Запись по услуге</label>
+    <div class="tab">
+        <div class="schedule">
+            <div class="day">
+                <div class="date">21 ноября Вт</div>
+                <div class="time-slot available" data-time="9:00">9:00</div>
+                <div class="time-slot available" data-time="10:00">10:00</div>
+                <div class="time-slot available" data-time="10:00">11:00</div>
+                <div class="time-slot available" data-time="10:00">12:00</div>
+                <div class="time-slot available" data-time="10:00">13:00</div>
+                <div class="time-slot available" data-time="10:00">14:00</div>
+                <div class="time-slot available" data-time="10:00">15:00</div>
+                <div class="time-slot available" data-time="10:00">16:00</div>
+                <div class="time-slot available" data-time="10:00">17:00</div>
+                <div class="time-slot available" data-time="10:00">18:00</div>
+                <div class="time-slot available" data-time="10:00">19:00</div>
+                <div class="time-slot available" data-time="10:00">20:00</div>
+                <!-- ... Другие временные слоты ... -->
+            </div>
+            <!-- ... Другие дни ... -->
+            <div class="day">
+                <div class="date">22 ноября Ср</div>
+                <div class="time-slot available" data-time="9:00">9:00</div>
+                <div class="time-slot available" data-time="10:00">10:00</div>
+                <div class="time-slot available" data-time="10:00">11:00</div>
+                <div class="time-slot available" data-time="10:00">12:00</div>
+                <div class="time-slot available" data-time="10:00">13:00</div>
+                <div class="time-slot available" data-time="10:00">14:00</div>
+                <div class="time-slot available" data-time="10:00">15:00</div>
+                <div class="time-slot available" data-time="10:00">16:00</div>
+                <div class="time-slot available" data-time="10:00">17:00</div>
+                <div class="time-slot available" data-time="10:00">18:00</div>
+                <div class="time-slot available" data-time="10:00">19:00</div>
+                <div class="time-slot available" data-time="10:00">20:00</div>
+                <!-- ... Другие временные слоты ... -->
+            </div>
+            <div class="day">
+                <div class="date">23 ноября Чт</div>
+                <div class="time-slot available" data-time="9:00">9:00</div>
+                <div class="time-slot available" data-time="10:00">10:00</div>
+                <div class="time-slot available" data-time="10:00">11:00</div>
+                <div class="time-slot available" data-time="10:00">12:00</div>
+                <div class="time-slot available" data-time="10:00">13:00</div>
+                <div class="time-slot available" data-time="10:00">14:00</div>
+                <div class="time-slot available" data-time="10:00">15:00</div>
+                <div class="time-slot available" data-time="10:00">16:00</div>
+                <div class="time-slot available" data-time="10:00">17:00</div>
+                <div class="time-slot available" data-time="10:00">18:00</div>
+                <div class="time-slot available" data-time="10:00">19:00</div>
+                <div class="time-slot available" data-time="10:00">20:00</div>
+                <!-- ... Другие временные слоты ... -->
+            </div>
+            <div class="day">
+                <div class="date">24 ноября Пт</div>
+                <div class="time-slot available" data-time="9:00">9:00</div>
+                <div class="time-slot available" data-time="10:00">10:00</div>
+                <div class="time-slot available" data-time="10:00">11:00</div>
+                <div class="time-slot available" data-time="10:00">12:00</div>
+                <div class="time-slot available" data-time="10:00">13:00</div>
+                <div class="time-slot available" data-time="10:00">14:00</div>
+                <div class="time-slot available" data-time="10:00">15:00</div>
+                <div class="time-slot available" data-time="10:00">16:00</div>
+                <div class="time-slot available" data-time="10:00">17:00</div>
+                <div class="time-slot available" data-time="10:00">18:00</div>
+                <div class="time-slot available" data-time="10:00">19:00</div>
+                <div class="time-slot available" data-time="10:00">20:00</div>
+                <!-- ... Другие временные слоты ... -->
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="jsForRecording.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+/*Добавление плашки футеру*/
+footer{
+    position: relative;/*относительное позиционирование*/
+    width: 100%;/*на всю ширину*/
+    padding: 20px 50px;/*поля для контента*/
+    background: #54614D;/*цвет футера*/
+    display: flex;
+    justify-content: center;/*в центре по горизонтали*/
+    align-items: center;/*в центре по вертикали*/
+    flex-direction: column;
+    margin-top: 20px;/*отступ сверху*/
+    box-shadow: #111111 0px 0px 8px;
+}
+
+.footer_adres{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0;
+    flex-wrap: wrap;/*разрешен перенос на новую строку*/
+}
+
+.arrow7 li,
+.footer_adres li{
+    list-style: none;/*удалить черные маркеры*/
+}
+
+
+.footer_adres h2,
+.footer_adres br,
+.footer_adres p,
+.footer_adres li a {
+    font-size: 1.2em;/*размер ссылок меню*/
+    color: #fff;/*цвет ссылок меню*/
+    opacity: 0.75;/*значение прозрачности*/
+    margin: 15px 15px;
+    text-decoration: none;/*ссылка без подчеркивания*/
+    display: inline-block;
+}
+
+.footer_class {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+}
+
+.arrow-7 {
+    margin: 20px 45% 0px auto;
+    width: 38px;
+    height: 50px;
+    cursor: pointer;
+}
+.arrow-7 span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #c9af91;
+    border-right: 5px solid #d9c5ba;
+    transform: rotate(45deg);
+    margin: -16px 0;
+    animation: arrow-7 2s infinite;
+}
+.arrow-7 span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow-7 span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes arrow-7 {
+    0%{
+        opacity: 0;
+        transform: translate(0,20px) rotate(-135deg);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(0,-20px) rotate(-135deg);
+    }
+}

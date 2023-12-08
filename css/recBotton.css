@@ -1,0 +1,93 @@
+/*закрепляем кнопку и выводим на передний план*/
+.wrap {
+    position: fixed;
+    top: 40vh;
+    right: 5vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+/*Настройки самой кнопки*/
+.button {
+    opacity: 0.95;
+    min-width: 100px;
+    min-height: 60px;
+    font-size: 14px;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: white;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgb(215, 177, 248) 0%, rgb(144, 96, 175) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgb(144, 96, 175);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+/*Работа псевдоэлемента бефор*/
+button::before {
+    content: '';
+    border-radius: 100px;
+    min-width: calc(100px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #9060af;
+    box-shadow: 0 0 60px rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+/*меняем цвет и положение кнопки при наведении*/
+.button:hover, .button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+/*убираем прозрачность псевдоэлементов при наведении*/
+button:hover::before, button:focus::before {
+    opacity: 1;
+}
+/*работа псевдоэлемента афтер*/
+button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #66506A;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+/*псевдоэлементы при наведении*/
+button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+}
+/*Разработака кадров анимации кольца*/
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+/* расположение кнопки в зависимости от размера девайса*/
+@media (max-width: 1504px) {
+    .wrap{
+        right: 20px;
+    }
+
+}

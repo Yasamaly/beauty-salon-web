@@ -1,0 +1,10 @@
+/*css файл для работы с секцией услуг*/
+
+.services {
+    background: cadetblue;
+}
+
+.name {
+    text-align: center;
+    padding: 50px 0px 25px;
+}
